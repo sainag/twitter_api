@@ -25,13 +25,13 @@ for (i = 0; i < statuses.length; i++) {
     // Replace hashtags with Twitter searches.
     var tags = statuses[i].retweeted == true ? statuses[i].retweeted_status.entities.hashtags : statuses[i].entities.hashtags;
     for (var j = 0; j < tags.length; j++) {
-        text = text.replace('#' + tags[j].text, '<a href="http://twitter.com/search/%23' + tags[j].text + '">#' + tags[j].text + '</a>');
+        text = text.replace('#' + tags[j].text, '<a href="https://twitter.com/search/%23' + tags[j].text + '">#' + tags[j].text + '</a>');
     }
 
     // Replace user mentions with Twitter URL links.
     var users = statuses[i].retweeted == true ? statuses[i].retweeted_status.entities.user_mentions : statuses[i].entities.user_mentions;
     for (var j = 0; j < users.length; j++) {
-        text = text.replace('@' + users[j].screen_name, '<a href="http://twitter.com/' + users[j].screen_name + '">@' + users[j].screen_name + '</a>');
+        text = text.replace('@' + users[j].screen_name, '<a href="https://twitter.com/' + users[j].screen_name + '">@' + users[j].screen_name + '</a>');
     }
     var profile_image_url = statuses[i].user.profile_image_url;
     var profile_image = "<img class='twitter-profile-image' src='"+profile_image_url+"' />";
@@ -59,7 +59,7 @@ for (i = 0; i < statuses.length; i++) {
     if (diff < 60) {tweet_time = "less than a minute ago";}
     if (diff <= 90) {tweet_time = "one minute ago";}
     if (diff <= 3540) {tweet_time = Math.round(diff / 60) + " minutes ago";}
-    if (diff <= 5400) {tweet_time = "1 hour ago";}
+    if (diff <= 5400) {tweet_time = "1 hour ago";}``
     if (diff <= 86400) {tweet_time = Math.round(diff / 3600) + " hours ago";}
     if (diff <= 129600) {tweet_time = "1 day ago";}
     if (diff < 604800) {tweet_time = Math.round(diff / 86400) + " days ago";}
