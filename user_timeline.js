@@ -54,16 +54,16 @@ for (i = 0; i < statuses.length; i++) {
     var tweet_time = "on "+system_date;
     var diff = Math.floor((user_date - system_date) / 1000);
     if (diff <= 1) {tweet_time = "just now";}
-    if (diff < 20) {tweet_time = diff + " seconds ago";}
-    if (diff < 40) {tweet_time = "half a minute ago";}
-    if (diff < 60) {tweet_time = "less than a minute ago";}
-    if (diff <= 90) {tweet_time = "one minute ago";}
-    if (diff <= 3540) {tweet_time = Math.round(diff / 60) + " minutes ago";}
-    if (diff <= 5400) {tweet_time = "1 hour ago";}``
-    if (diff <= 86400) {tweet_time = Math.round(diff / 3600) + " hours ago";}
-    if (diff <= 129600) {tweet_time = "1 day ago";}
-    if (diff < 604800) {tweet_time = Math.round(diff / 86400) + " days ago";}
-    if (diff <= 777600) {tweet_time = "1 week ago";}
+    else if (diff < 20) {tweet_time = diff + " seconds ago";}
+    else if (diff < 40) {tweet_time = "half a minute ago";}
+    else if (diff < 60) {tweet_time = "less than a minute ago";}
+    else if (diff <= 90) {tweet_time = "one minute ago";}
+    else if (diff <= 3540) {tweet_time = Math.round(diff / 60) + " minutes ago";}
+    else if (diff <= 5400) {tweet_time = "1 hour ago";}``
+    else if (diff <= 86400) {tweet_time = Math.round(diff / 3600) + " hours ago";}
+    else if (diff <= 129600) {tweet_time = "1 day ago";}
+    else if (diff < 604800) {tweet_time = Math.round(diff / 86400) + " days ago";}
+    else if (diff <= 777600) {tweet_time = "1 week ago";}
 
     var tweetContent = profile_image+"<p>"+text+"</p><div class='tweet-data'>"+tweet_time+" <span class='detail'>"+reply_url+" "+retweet_url+" "+like_url+"</span></div>";
     print("<article class='twitter-item'>" +  tweetContent + "</article>");
